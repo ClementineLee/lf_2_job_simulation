@@ -25,6 +25,15 @@ defmodule Lf2JobSimulationWeb.Layouts do
       </Layouts.app>
 
   """
+
+  attr :userid, :string, required: true
+  attr :test1, :boolean, required: true
+  attr :test2, :boolean, required: true
+
+  def menu(assigns) do
+    menu_layout(assigns)
+  end
+
   attr :flash, :map, required: true, doc: "the map of flash messages"
 
   attr :current_scope, :map,

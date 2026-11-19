@@ -13,7 +13,7 @@
       packages = with pkgs; [
         #Have Packages be up to date with floating Channel
 	      beamPackages.elixir
-        postgresql
+        #postgresql
         git
       ];
 	shellHook = '' 

@@ -1,0 +1,105 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">Die Simulation</div>
+    <div class="card-body">
+      <h4 class="card-title">Der Kunde</h4>
+
+      <div><span>Max Mustermann </span></div>
+
+      <div>
+        Moin, ich brauch für das Erstellen von Lernzetteln und gelgentliches Youtube schauen einen geeigneten Arbeitsspeicher.
+      </div>
+      <div>
+        Ich habe mir einen alten, kaputten PC gekauft. Er hat einen funktionsfähigen DDR4 Prozessor und Mainboard. Der Arbeitsspeicher ist kaputt. Man könnte VRAM einbauen.
+      </div>
+      <div>Ich möchte nicht mehr als 100€ ausgeben.</div>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">1. System prüfen:</h4>
+
+      <.single_choice
+        question="Welche RAM Art möchte der Kunde/die Kundin?"
+        options_single_questions={[
+          "DRAM",
+          "SRAM"
+        ]}
+        name="system_question_1"
+        test1={false}
+        result_quiz={%{}}
+      />
+      <div id="system_DRAM_question1" style="display: none;">
+        <.single_choice
+          question="Welche DDR Generation wird benötigt?"
+          options_single_questions={[
+            "DDR3",
+            "DDR4",
+            "DDR5",
+            "Mehrere Möglichkeiten",
+            "Keine dieser"
+          ]}
+          name="system_question_2"
+          test1={false}
+          result_quiz={%{}}
+        />
+      </div>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">2. Bedarf abschätzen</h4>
+
+      <.single_choice
+        question="Für welche Anwendungen soll das Gerät genutzt werden?"
+        options_single_questions={[
+          "Textbearbeitung, Browser",
+          "KI"
+        ]}
+        name="requirement_question_1"
+        test1={false}
+        result_quiz={%{}}
+      />
+      <.single_choice
+        question="Wie groß sollte deiner Meinung nach der Arbeitsspeicher für den Bedarf sein?"
+        options_single_questions={[
+          "8-16 GB",
+          "16-32 GB",
+          "64 GB",
+          "128 GB"
+        ]}
+        name="requirement_question_2"
+        test1={false}
+        result_quiz={%{}}
+      />
+      <.single_choice
+        question="Ist es möglich eine dublizierte VRAM Modul zu verbauen und wenn ja würden Sie es empfehlen?"
+        options_single_questions={[
+          "Nein, ein VRAM Modul kann nicht verbaut werden.",
+          "Ja, grundsätzlich ist es möglich. Ich würde es aber für den Bedarf nicht empfehlen.",
+          "Ja, es ist möglich und ich würde es auch empfehlen."
+        ]}
+        name="requirement_question_3"
+        test1={false}
+        result_quiz={%{}}
+      />
+    </div>
+  </div>
+</div>
+<script>
+    document.addEventListener("change", function(event) {
+    if (event.target.name === "system_question_1") {
+      const question = document.getElementById("system_DRAM_question1");
+
+      if (event.target.value === "DRAM") {
+        question.style.display = "block";
+      } else {
+        question.style.display = "none";
+
+        question.querySelectorAll("input").forEach(input => {
+          if (input.type === "radio" || input.type === "checkbox") {
+            input.checked = false;
+          } else {
+            input.value = "";
+          }
+        });
+      }
+    }
+  });
+</script>

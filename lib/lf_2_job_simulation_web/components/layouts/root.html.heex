@@ -38,6 +38,10 @@
     </script>
   </head>
   <body>
+    <div class="z-9999">
+      <.flash kind={:error} flash={@flash} />
+      <.flash kind={:info} flash={@flash} />
+    </div>
     {@inner_content}
   </body>
 </html>

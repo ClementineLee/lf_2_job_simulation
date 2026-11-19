@@ -1,0 +1,211 @@
+<.form action="/quiz/auswertung" method="post">
+  <.input class="hidden" name="options" value={@options} data-autosave="true"></.input>
+
+  <div class="card">
+    <div class="card-body">
+      <%= if @test1 do %>
+        <h1 class="text-green-600">Sie haben Bestanden!</h1>
+        <h2 class="text-green-600">IHRE ERGEBNISSE</h2>
+      <% end %>
+      <div class="card-title">
+        Aufgabe 1: Füllen Sie den Lückentext aus.
+      </div>
+      <div>
+        <div>
+          Der RAM dient im Computer als
+          <.word_dropdown
+            options={@options}
+            name="text_answer1"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />.
+
+          Er speichert Daten im Gegensatz zu einer Festplatte nur
+          <.word_dropdown
+            options={@options}
+            name="text_answer2"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />.
+
+          Das bedeutet, dass ohne Strom alle Daten
+          <.word_dropdown
+            options={@options}
+            name="text_answer3"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          /> gehen.
+        </div>
+        <div>
+          Da der Langzeitspeicher für die direkte Verarbeitung zu langsam ist, lädt die
+          <.word_dropdown
+            options={@options}
+            name="text_answer4"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          /> die benötigten Daten in den RAM.
+        </div>
+        <div>
+          Die am meisten genutzte Art von Arbeitsspeicher ist der DRAM, dessen aktuell neueste Generation
+          <.word_dropdown
+            options={@options}
+            name="text_answer5"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          /> heißt.
+
+          Der Begriff „DDR“ steht dabei für
+          <.word_dropdown
+            options={@options}
+            name="text_answer6"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        Aufgabe 2: Beantworten Sie die Single-Choice Fragen.
+      </div>
+      <div>
+        <div>
+          <.single_choice
+            question="Wie viel schneller ist moderner DDR5-RAM im Dual-Channel-Modus im Vergleich zu einer herkömmlichen SATA-SSD?"
+            options_single_questions={[
+              "Ungefähr doppelt so schnell",
+              "Ungefähr 10- bis 15-mal schneller",
+              "Ungefähr 100- bis 160-mal schneller"
+            ]}
+            name="single_choise_question_1"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+        <div>
+          <.single_choice
+            question="Warum erreichen SATA-SSDs maximal nur etwa 550 bis 600 MB/s beim Datentransfer?"
+            options_single_questions={[
+              "Weil die Flash-Speicherchips technisch nicht mehr leisten können.",
+              "Weil die SATA-III-Schnittstelle physikalisch auf diese Geschwindigkeit limitiert ist.",
+              "Weil das Mainboard den Stromfluss zur SSD künstlich drosselt."
+            ]}
+            name="single_choise_question_2"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+        <div>
+          <.single_choice
+            question="Was passiert mit den Daten im RAM, wenn du den Computer komplett ausschaltest?"
+            options_single_questions={[
+              "Sie bleiben dauerhaft gespeichert, bis sie überschrieben werden.",
+              "Sie werden sofort gelöscht, da RAM ein flüchtiger Speicher ist.",
+              "Sie werden automatisch auf die langsamere SATA-SSD verschoben."
+            ]}
+            name="single_choise_question_3"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+        <div>
+          <.single_choice
+            question="Welchen Vorteil bietet der Dual-Channel-Modus bei Arbeitsspeicher (RAM)?"
+            options_single_questions={[
+              "Er verdoppelt nahezu die Bandbreite, weil die CPU auf zwei Riegel gleichzeitig zugreift.",
+              "Er sorgt dafür, dass RAM-Daten dauerhaft wie auf einer SSD gespeichert werden.",
+              "Er halbiert den Stromverbrauch des Systems."
+            ]}
+            name="single_choise_question_4"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+
+        <div>
+          <.single_choice
+            question="Warum nutzt eine Grafikkarte eigenen VRAM statt des normalen RAMs?"
+            options_single_questions={[
+              "Weil normaler RAM zu groß ist, um auf die Grafikkarte zu passen.",
+              "Weil VRAM viel günstiger in der Herstellung ist.",
+              "Weil VRAM extrem hohe Bandbreiten bietet, um 3D-Modelle und Texturen ohne Verzögerung an die GPU zu liefern."
+            ]}
+            name="single_choise_question_5"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        Aufgabe 3: Entscheiden Sie, ob die unten stehenden Behauptungen Wahr oder Falsch sind.
+      </div>
+      <div>
+        <div>
+          <.single_choice
+            question="Mehr RAM im PC erhöht die FPS (Bilder pro Sekunde) in Spielen immer weiter, egal wie viel RAM man schon hat."
+            options_single_questions={[
+              "Wahr",
+              "Falsch"
+            ]}
+            name="truth_false_question_1"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+        <div>
+          <.single_choice
+            question="Das Spielen in höheren Auflösungen verbraucht deutlich mehr VRAM auf der Grafikkarte."
+            options_single_questions={[
+              "Wahr",
+              "Falsch"
+            ]}
+            name="truth_false_question_2"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+        <div>
+          <.single_choice
+            question="Wenn man zwei identische RAM-Riegel verbaut, verdoppelt sich die theoretische Bandbreite (Datentransferrate) im Vergleich zu nur einem Riegel."
+            options_single_questions={[
+              "Wahr",
+              "Falsch"
+            ]}
+            name="truth_false_question_3"
+            test1={@test1}
+            result_quiz={@result_quiz}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= if @test1==false do %>
+    <div class="card">
+      <div class="card-body">
+        <.button type="submit" class="btn btn-primary">
+          Antworten absenden
+        </.button>
+      </div>
+    </div>
+  <% end %>
+</.form>
+<%= if @test1 do %>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        Fahren Sie nun fort und informieren Sie sich über unsere Produktauswahl.
+      </div>
+
+      <.link href="/unsere_Produkte">
+        <.button>Zu unseren Produktinformationen</.button>
+      </.link>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<div class="navbar sticky top-0 z-50 bg-base-200/70  backdrop-blur-md shadow-sm">
+  <div class="navbar-start">
+    <details class="dropdown">
+      <summary class="btn m-1">Menü</summary>
+      <ul class="menu dropdown-content bg-base-200 rounded-box z-1 w-52 p-2 shadow-sm">
+        <li>
+          <a href={~p"/willkommen"}> Willkommen</a>
+          <li>
+            <a href={~p"/basis_informationen"}>Informationen zum Nachlesen</a>
+          </li>
+          <li>
+            <a href={~p"/quiz"}>Quiz</a>
+          </li>
+        </li>
+        <%= if @test1 do %>
+          <li>
+            <a href="/unsere_Produkte">Unsere Produkte</a>
+          </li>
+          <li>
+            <a href="/simulation">Die Simulation</a>
+          </li>
+          <%= if @test2 do %>
+            <li>
+              <a>Weitere Aufgaben </a>
+            </li>
+          <% end %>
+        <% end %>
+
+        <li><a href="/impressum">Impressum</a></li>
+      </ul>
+    </details>
+  </div>
+  <div class="navbar-center">
+    <a class="btn btn-ghost text-xl" href={~p"/willkommen"}>Bewerbungsportal</a>
+  </div>
+  <div class="navbar-end"></div>
+</div>
+
+<div>{@inner_content}</div>
