@@ -346,7 +346,7 @@ defmodule Lf2JobSimulationWeb.PageController do
         |> put_flash(:clear_autosave, "true")
         |> put_flash(
           :info,
-          "Herzlichen Glückwunsch. Sie haben den Test Bestanden. Beraten Sie nun Ihren ersten Kunden."
+          "Herzlichen Glückwunsch. Sie haben den Test bestanden. Beraten Sie nun Ihren ersten Kunden."
         )
       else
         userdata =
@@ -361,7 +361,7 @@ defmodule Lf2JobSimulationWeb.PageController do
             options: options
           )
           |> put_flash(:clear_autosave, "true")
-          |> put_flash(:info, "leider haben Sie nicht bestanden. Bitte versuchen Sie es nochmal.")
+          |> put_flash(:info, "Leider haben Sie nicht bestanden. Bitte versuchen Sie es nochmal.")
       end
 
     IO.inspect(result_quiz)
