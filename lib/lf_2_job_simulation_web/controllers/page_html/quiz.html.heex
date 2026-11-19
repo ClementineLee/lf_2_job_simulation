@@ -87,11 +87,11 @@
         </div>
         <div>
           <.single_choice
-            question="Warum erreichen SATA-SSDs maximal nur etwa 550 bis 600 MB/s beim Datentransfer?"
+            question="Ein Computer wird immer langsamer, sobald mehrere Programme gleichzeitig geöffnet sind. Der Arbeitsspeicher ist dabei fast vollständig ausgelastet. Welche Erklärung ist am wahrscheinlichsten?"
             options_single_questions={[
-              "Weil die Flash-Speicherchips technisch nicht mehr leisten können.",
-              "Weil die SATA-III-Schnittstelle physikalisch auf diese Geschwindigkeit limitiert ist.",
-              "Weil das Mainboard den Stromfluss zur SSD künstlich drosselt."
+              "Die CPU muss mehr Strom aufwenden, um die Programme gleichzeitig zu verarbeiten.",
+              "Benötigte Daten müssen teilweise auf den langsameren Massenspeicher ausgelagert werden, wodurch Verzögerungen entstehen können.",
+              "Der Arbeitsspeicher wechselt automatisch von DRAM zu SRAM."
             ]}
             name="single_choise_question_2"
             test1={@test1}
@@ -100,11 +100,11 @@
         </div>
         <div>
           <.single_choice
-            question="Was passiert mit den Daten im RAM, wenn du den Computer komplett ausschaltest?"
+            question="Warum muss DRAM im Gegensatz zu SRAM regelmäßig aufgefrischt werden?"
             options_single_questions={[
-              "Sie bleiben dauerhaft gespeichert, bis sie überschrieben werden.",
-              "Sie werden sofort gelöscht, da RAM ein flüchtiger Speicher ist.",
-              "Sie werden automatisch auf die langsamere SATA-SSD verschoben."
+              "Weil die gespeicherte elektrische Ladung in den Kondensatoren mit der Zeit verloren geht.",
+              "Weil die Transistoren im DRAM nach jeder Datenübertragung neu gestartet werden müssen.",
+              "Weil DRAM seine Daten ausschließlich bei aktiver CPU-Verarbeitung speichern kann."
             ]}
             name="single_choise_question_3"
             test1={@test1}
@@ -173,7 +173,7 @@
         </div>
         <div>
           <.single_choice
-            question="Wenn man zwei identische RAM-Riegel verbaut, verdoppelt sich die theoretische Bandbreite (Datentransferrate) im Vergleich zu nur einem Riegel."
+            question="Eine höhere DDR-Generation bedeutet automatisch, dass ein RAM-Modul mit jedem älteren Mainboard kompatibel ist."
             options_single_questions={[
               "Wahr",
               "Falsch"

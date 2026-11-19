@@ -8,24 +8,24 @@ defmodule Lf2JobSimulationWeb.PageController do
       body: [
         [
           "Willkommen bei der RAM ist COOL GMBH",
-          "Wir sind eine Gruppe aus 3 Expert*innen (Vertrau mir Bruder) und verkaufen Ram/VRAM-Module.",
-          "Schön, dass Sie sich für Unser Unternehmen Interessieren. Bevor Sie bei uns für Mindestlohn arbeiten dürfen, müssen Sie aber uns, und vor allem
-          sich selbst beweisen, dass Sie das Zeug zum Verkauf haben."
+          "Wir sind eine Gruppe aus drei Expert*innen (Vertrau mir, Bruder) und verkaufen RAM-Module sowie Grafikkarten mit integriertem Videospeicher (VRAM).",
+          "Schön, dass Sie sich für unser Unternehmen interessieren. Bevor Sie bei uns für Mindestlohn arbeiten dürfen, müssen Sie uns, und vor allem sich selbst, allerdings beweisen, dass Sie das Zeug zum Verkauf haben."
         ],
         [
-          "Warum wir einen sicheren Arbeitsplatz bieten können.",
-          "Ist man ein wenig belesen in der aktuellen Marktforschung, (und wir sind sehr belesen), so stößt man auf das Wort RAM-Krise",
-          "Damit ist gemeint, dass in den letzten Jahren, der RAM-Preis sich mitunter verdreifacht hat. ",
-          " Der Hauptgrund für diese Preisentwicklung sind Unternehmen, die KI Modelle betreiben und entwickeln. Diese brauchen, um flüssig laufen zu können, eine rießige Menge an Arbeitsspeicher, also RAM, was letzendlich die Nachfrage in die Höhe treiben lässt. Somit steigen auch die Preise und aktuell ist es nicht absehbar, dass die Nachfrage wieder sinken könnte.",
-          "Andere Branchen werden also von KI abgelöst, unsere wächst. Wir brauchen also jede menge Kluge Köpfe, die unser Unternehmen mit Vorrantreiben."
+          "Warum wir einen sicheren Arbeitsplatz bieten können",
+          "Ist man ein wenig belesen in der aktuellen Marktforschung (und wir sind sehr belesen), so stößt man auf das Wort „RAM-Krise“.",
+          "Damit ist die angespannte Situation auf dem Speichermarkt gemeint, in der die Preise für bestimmte RAM-Produkte teilweise drastisch gestiegen sind.",
+          "Ein wesentlicher Grund für diese Preisentwicklung ist die steigende Nachfrage nach Speicher für KI-Rechenzentren. Unternehmen, die KI-Modelle entwickeln und betreiben, benötigen dafür große Mengen an leistungsfähigem Arbeitsspeicher.",
+          "Besonders gefragt ist dabei sogenannter High Bandwidth Memory (HBM). Da die Hersteller ihre Produktionskapazitäten zunehmend auf solche Speicherprodukte ausrichten, kann das Angebot an herkömmlichem RAM knapper werden. Dadurch steigen auch dessen Preise.",
+          "Andere Branchen werden also von KI abgelöst, während unsere wächst. Wir brauchen daher jede Menge kluger Köpfe, die unser Unternehmen mit vorantreiben."
         ],
         [
           "Der Bewerbungsablauf",
-          "1. Sie haben die Möglichkeit sich nochmal mit von uns bereit gestellten Informationsmaterialien ihr Fachwissen zu verfestigen.",
+          "1. Sie haben die Möglichkeit, Ihr Fachwissen mithilfe der von uns bereitgestellten Informationsmaterialien zu festigen.",
           "2. Anschließend dürfen Sie Ihr Wissen mit einem Quiz überprüfen! Keine Sorge, Sie haben beliebig viele Versuche.",
-          "3. Haben Sie das Quiz bestanden, schaltet sich die Kundensimulation frei.",
-          "4. Bestehen Sie die Simulation, bekommen Sie ein Job-Angebot.",
-          "5. Schließlich können Sie noch an weiteren Kunden üben."
+          "3. Haben Sie das Quiz bestanden, wird die Kundensimulation freigeschaltet.",
+          "4. Bestehen Sie die Simulation, erhalten Sie ein Jobangebot.",
+          "5. Schließlich können Sie noch mit weiteren Kunden üben."
         ]
       ],
       userid: userdata.userid,
@@ -41,25 +41,26 @@ defmodule Lf2JobSimulationWeb.PageController do
       body: [
         [
           [
-            "Was ist RAM",
+            "Was ist RAM?",
             "RAM: Random Access Memory (Arbeitsspeicher)",
-            "Funktion: CPU mit Daten laufender Programme versorgen, Ladezeiten verkürzen, legging verhindern",
-            "Eigenschaften: temporäre Speicherung, schnelle Laufzeit, meist erforderlich für Engeräte, lineare Laufzeit"
+            "Funktion: Die CPU mit Daten laufender Programme versorgen, Ladezeiten verkürzen und Ruckler durch Speichermangel reduzieren.",
+            "Eigenschaften: flüchtige Speicherung, schnelle Zugriffszeiten, direkter Zugriff auf einzelne Speicheradressen."
           ],
           [
             "Schematische Darstellung: So arbeiten die Speicher zusammen",
             "[[IMAGE:Bild.jpeg]]",
-            "Vereinfachtes Schema: RAM versorgt die CPU"
+            "Vereinfachtes Schema: RAM versorgt die CPU."
           ],
           [
             "Ausführliche Erklärung",
             "Die Abkürzung RAM steht für Random Access Memory, auf Deutsch Arbeitsspeicher.",
-            "Vergleichen kann man einen Arbeitsspeicher mit einem Schreibtisch, auf denen gerade benötigte Unterlagen und Endgeräte offen liegen.",
-            "So liegen im Arbeitsspeicher meist Daten und Programme.",
-            "Die Daten werden in diesem Linear gespeichert, was bedeutet, dass sie mit einer sehr kurzen Laufzeit abgerufen werden können.",
-            "Das sorgt für ein flüssiges Nutzererlebnis mit möglichst wenig Ladezeiten. Auch leggs werden dadurch minimiert.",
-            "Anders wie eine SSD oder Festplatte, ist RAM ein flüchtiger Speicher. Das bedeutet, dass die Daten ohne Strom verloren gehen. SSDs und Festplatten speichern Daten dagegen dauerhaft",
-            "Die meisten CPUs können ohne RAM nur schwer zum Laufen gebracht werden. Ein Verzicht ist quasi unmöglich."
+            "Einen Arbeitsspeicher kann man mit einem Schreibtisch vergleichen, auf dem gerade benötigte Unterlagen und Arbeitsmaterialien liegen.",
+            "Im Arbeitsspeicher befinden sich meist Daten und Programme, die gerade verwendet werden.",
+            "Die Daten werden in diesem Speicher abgelegt und können mit sehr kurzen Zugriffszeiten abgerufen werden.",
+            "Das sorgt für ein flüssigeres Nutzererlebnis und kann Ladezeiten sowie Ruckler reduzieren, insbesondere wenn zuvor ein Mangel an Arbeitsspeicher bestand.",
+            "Anders als eine SSD oder Festplatte ist RAM ein flüchtiger Speicher. Das bedeutet, dass die Daten ohne Stromversorgung verloren gehen. SSDs und Festplatten speichern Daten dagegen dauerhaft.",
+            "Die meisten CPUs können ohne RAM nicht sinnvoll betrieben werden. Ein Verzicht auf Arbeitsspeicher ist praktisch unmöglich.",
+            "Eine modernere DDR5-RAM im Dual-Channel-Modus ist etwa 10-15 mal schneller, als eine herkömmliche SATA-SSD."
           ]
         ],
         [
@@ -77,10 +78,10 @@ defmodule Lf2JobSimulationWeb.PageController do
           [
             "Für den Verkauf wichtig zu wissen",
             "Wenn Kunden nach Arbeitsspeicher für ihren PC fragen, meinen sie normalerweise DRAM in Form eines DDR-RAM-Moduls.",
-            "SRAM wird normalerweise nicht als separates RAM-Modul verkauft, da er bereits als Cache im Prozessor integriert ist.",
+            "Sofern ein System Unified Memory verwendet, ist eine Aufrüstung häufig schwierig oder unmöglich, da der Speicher je nach Bauweise fest verlötet oder direkt in das Chip-Paket integriert ist.",
             "Vor dem Verkauf muss geprüft werden, ob das Mainboard DDR4 oder DDR5 unterstützt. Die beiden Generationen können nicht gegeneinander ausgetauscht werden.",
             "Eine neuere DDR-Generation ist nicht automatisch mit jedem älteren Computer kompatibel. Auch die unterstützte Geschwindigkeit und Speicherkapazität müssen berücksichtigt werden.",
-            "Sofern ein System ein Unified Memory benutzt, ist eine Aufrüstung schwierig."
+            "Sofern ein System Unified Memory verwendet, ist eine Aufrüstung häufig schwierig oder unmöglich, da der Speicher je nach Bauweise fest verlötet oder direkt in das Chip-Paket integriert ist."
           ],
           [
             "Beispielbilder",
@@ -90,7 +91,7 @@ defmodule Lf2JobSimulationWeb.PageController do
             "SRAM:",
             "[[IMAGE:A200_DIL-32.jpg]]",
             "https://www.reichelt.de/de/de/shop/produkt/sram_1_mb_128_k_x_8_5_v_55ns_dil-32-146552",
-            "DDR Generationen:",
+            "DDR-Generationen:",
             "[[IMAGE:Physic-Size-of-DDR-DDR2-DDR3-DDR4-and-DDR5.webp]]",
             "https://www.diskmfr.com/understanding-ram-compatibility-brands-and-frequencies/?utm_source=chatgpt.com"
           ],
@@ -103,7 +104,7 @@ defmodule Lf2JobSimulationWeb.PageController do
             "SRAM ist besonders schnell und hat sehr kurze Zugriffszeiten. Allerdings benötigt er mehr Platz auf dem Chip und ist deutlich teurer in der Herstellung. Deshalb wird er normalerweise nicht als großer Hauptarbeitsspeicher verwendet, sondern beispielsweise als Cache direkt im Prozessor. Dort speichert er besonders häufig benötigte Daten, damit die CPU möglichst schnell darauf zugreifen kann.",
             "Die bekannten RAM-Module, die man in einen PC einbaut, basieren auf DRAM. Dabei gibt es verschiedene Generationen der DDR-Technologie.",
             "DDR steht für Double Data Rate. Diese Technik ermöglicht zwei Datenübertragungen pro Taktzyklus. Im Laufe der Zeit wurden verschiedene Generationen entwickelt: DDR, DDR2, DDR3, DDR4 und DDR5. Jede neue Generation bringt technische Veränderungen mit sich, beispielsweise höhere mögliche Datenraten und eine verbesserte Energieeffizienz.",
-            "Die verschiedenen DDR-Generationen sind nicht untereinander austauschbar. Sie unterscheiden sich unter anderem in ihrer Bauform, Pinbelegung und elektrischen Eigenschaften. Das Mainboard und der Prozessor müssen die jeweilige Generation unterstützen."
+            "Die verschiedenen DDR-Generationen sind nicht untereinander austauschbar. Sie unterscheiden sich unter anderem in ihrer Bauform, Pinbelegung und ihren elektrischen Eigenschaften. Das Mainboard und der Prozessor müssen die jeweilige Generation unterstützen."
           ]
         ],
         [
@@ -284,9 +285,9 @@ defmodule Lf2JobSimulationWeb.PageController do
       %{
         "single_choise_question_1" => "Ungefähr 10- bis 15-mal schneller",
         "single_choise_question_2" =>
-          "Weil die SATA-III-Schnittstelle physikalisch auf diese Geschwindigkeit limitiert ist.",
+          "Benötigte Daten müssen teilweise auf den langsameren Massenspeicher ausgelagert werden, wodurch Verzögerungen entstehen können.",
         "single_choise_question_3" =>
-          "Sie werden sofort gelöscht, da RAM ein flüchtiger Speicher ist.",
+          "Weil die gespeicherte elektrische Ladung in den Kondensatoren mit der Zeit verloren geht.",
         "single_choise_question_4" =>
           "Er verdoppelt nahezu die Bandbreite, weil die CPU auf zwei Riegel gleichzeitig zugreift.",
         "single_choise_question_5" =>
@@ -299,7 +300,7 @@ defmodule Lf2JobSimulationWeb.PageController do
         "text_answer6" => "Double Data Rate",
         "truth_false_question_1" => "Falsch",
         "truth_false_question_2" => "Wahr",
-        "truth_false_question_3" => "Wahr"
+        "truth_false_question_3" => "Falsch"
       }
 
     result_quiz =
