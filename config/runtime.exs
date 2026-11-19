@@ -50,7 +50,7 @@ if config_env() == :prod do
       "localhost"
 
   port =
-    String.to_integer(System.get_env("PORT") || "4000")
+    String.to_integer(System.get_env("PORT") || "10000")
 
   config :lf_2_job_simulation, Lf2JobSimulationWeb.Endpoint,
     url: [host: host, port: 443, scheme: "https"],
