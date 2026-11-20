@@ -1,87 +1,276 @@
-<div class="card">
-  <div class="card-body">
-    <div class="card-title">Die Simulation</div>
+<.form action="/simulation" method="post">
+  <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Der Kunde</h4>
+      <div class="card-title">Die Simulation</div>
+      <div class="card-body">
+        <h4 class="card-title">Der Kunde</h4>
 
-      <div><span>Max Mustermann </span></div>
+        <div><span>Max Mustermann </span></div>
 
-      <div>
-        Moin, ich brauch für das Erstellen von Lernzetteln und gelgentliches Youtube schauen einen geeigneten Arbeitsspeicher.
+        <div>
+          Moin, ich brauch für das Erstellen von Lernzetteln und gelgentliches Youtube schauen einen geeigneten Arbeitsspeicher.
+        </div>
+        <div>
+          Ich habe mir einen alten, kaputten PC gekauft. Er hat einen funktionsfähigen DDR4 Prozessor und Mainboard. Der Arbeitsspeicher ist kaputt. Man könnte VRAM einbauen.
+        </div>
+        <div>Ich möchte nicht mehr als 100€ ausgeben.</div>
       </div>
-      <div>
-        Ich habe mir einen alten, kaputten PC gekauft. Er hat einen funktionsfähigen DDR4 Prozessor und Mainboard. Der Arbeitsspeicher ist kaputt. Man könnte VRAM einbauen.
-      </div>
-      <div>Ich möchte nicht mehr als 100€ ausgeben.</div>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">1. System prüfen:</h4>
+      <div class="card-body">
+        <h4 class="card-title">1. System prüfen:</h4>
 
-      <.single_choice
-        question="Welche RAM Art möchte der Kunde/die Kundin?"
-        options_single_questions={[
-          "DRAM",
-          "SRAM"
-        ]}
-        name="system_question_1"
-        test1={false}
-        result_quiz={%{}}
-      />
-      <div id="system_DRAM_question1" style="display: none;">
         <.single_choice
-          question="Welche DDR Generation wird benötigt?"
+          question="Welche Art von Arbeitsspeicher benötigt das System?"
           options_single_questions={[
-            "DDR3",
-            "DDR4",
-            "DDR5",
-            "Mehrere Möglichkeiten",
-            "Keine dieser"
+            "DRAM",
+            "SRAM",
+            "VRAM"
           ]}
-          name="system_question_2"
+          name="system_question_1"
           test1={false}
           result_quiz={%{}}
         />
+        <div id="system_DRAM_question1" style="display: none;">
+          <.single_choice
+            question="Welche DDR Generation wird benötigt?"
+            options_single_questions={[
+              "DDR3",
+              "DDR4",
+              "DDR5"
+            ]}
+            name="system_question_2"
+            test1={false}
+            result_quiz={%{}}
+          />
+        </div>
       </div>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">2. Bedarf abschätzen</h4>
+      <div class="card-body">
+        <h4 class="card-title">2. Bedarf abschätzen</h4>
 
-      <.single_choice
-        question="Für welche Anwendungen soll das Gerät genutzt werden?"
-        options_single_questions={[
-          "Textbearbeitung, Browser",
-          "KI"
-        ]}
-        name="requirement_question_1"
-        test1={false}
-        result_quiz={%{}}
-      />
-      <.single_choice
-        question="Wie groß sollte deiner Meinung nach der Arbeitsspeicher für den Bedarf sein?"
-        options_single_questions={[
-          "8-16 GB",
-          "16-32 GB",
-          "64 GB",
-          "128 GB"
-        ]}
-        name="requirement_question_2"
-        test1={false}
-        result_quiz={%{}}
-      />
-      <.single_choice
-        question="Ist es möglich eine dublizierte VRAM Modul zu verbauen und wenn ja würden Sie es empfehlen?"
-        options_single_questions={[
-          "Nein, ein VRAM Modul kann nicht verbaut werden.",
-          "Ja, grundsätzlich ist es möglich. Ich würde es aber für den Bedarf nicht empfehlen.",
-          "Ja, es ist möglich und ich würde es auch empfehlen."
-        ]}
-        name="requirement_question_3"
-        test1={false}
-        result_quiz={%{}}
-      />
+        <.single_choice
+          question="Für welche Anwendungen soll der Computer hauptsächlich genutzt werden?"
+          options_single_questions={[
+            "Textbearbeitung, Browser",
+            "KI-Anwendung",
+            "Videobearbeitung und Bildbearbeitung",
+            "Serverbetrieb und Datenbanken",
+            "Mehrere anspruchsvolle Anwendungen gleichzeitig."
+          ]}
+          name="requirement_question_1"
+          test1={false}
+          result_quiz={%{}}
+        />
+        <.single_choice
+          question="Wie groß sollte deiner Meinung nach der Arbeitsspeicher für den Bedarf sein?"
+          options_single_questions={[
+            "4-8 GB",
+            "8-16 GB",
+            "16-32 GB",
+            "64 GB",
+            "128 GB"
+          ]}
+          name="requirement_question_2"
+          test1={false}
+          result_quiz={%{}}
+        />
+        <.single_choice
+          question="Welche Bedeutung hat die Geschwindigkeit des Arbeitsspeichers für den Einsatzzweck?"
+          options_single_questions={[
+            "Niedrige Geschwindigkeit reicht aus",
+            "Eine mittlere Geschwindigkeit ist sinnvoll.",
+            "Eine möglichst hohe Geschwindigkeit ist wichtig."
+          ]}
+          name="requirement_question_3"
+          test1={false}
+          result_quiz={%{}}
+        />
+
+        <.single_choice
+          question="Ist es möglich eine dublizierte VRAM Modul zu verbauen und wenn ja würden Sie es empfehlen?"
+          options_single_questions={[
+            "Nein, ein VRAM Modul kann nicht verbaut werden.",
+            "Ja, grundsätzlich ist es möglich. Ich würde es aber für den Bedarf nicht empfehlen.",
+            "Ja, es ist möglich und ich würde es auch empfehlen."
+          ]}
+          name="requirement_question_3"
+          test1={false}
+          result_quiz={%{}}
+        />
+
+        <div>
+          Jetzt wo Sie eine erste Einschätzung getroffen haben, lesen Sie sich genau unser Produktkatalog durch.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Produktkatalog</div>
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">RAM Basic</div>
+              <div class="my-4">
+                <img
+                  src={~p"/images/1_500.jpg"}
+                  alt="Abbildung"
+                  class="max-w-full h-auto rounded-lg"
+                />
+              </div>
+              <div>Typ: DDR4 DRAM</div>
+              <div>Größe: 8 GB (1 × 8 GB)</div>
+              <div>Tempo: 2666 MT/s</div>
+              <div>Latenz: CL19</div>
+              <div>Preis: 22 €</div>
+              <div>Extra: Günstiger Einstieg</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">RAM Allrounder</div>
+              <div class="my-4">
+                <img
+                  src={~p"/images/c0d789c753ff45698427c5f1b9e91903.webp"}
+                  alt="Abbildung"
+                  class="max-w-full h-auto rounded-lg"
+                />
+              </div>
+              <div>Typ: DDR4 DRAM</div>
+              <div>Größe: 16 GB (2 × 8 GB)</div>
+              <div>Tempo: 3200 MT/s</div>
+              <div>Latenz: CL16</div>
+              <div>Preis: 42 €</div>
+              <div>Extra: Dual-Channel, gutes Preis-Leistungs-Verhältnis</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">RAM Power</div>
+              <img
+                src={~p"/images/71rVJlc97ML._AC_SX679_.jpg"}
+                alt="Abbildung"
+                class="max-w-full h-auto rounded-lg"
+              />
+              <div>Typ: DDR4 DRAM</div>
+              <div>Größe: 32 GB (2 × 16 GB)</div>
+              <div>Tempo: 3200 MT/s</div>
+              <div>Latenz: CL16</div>
+              <div>Preis: 76 €</div>
+              <div>Extra: Dual-Channel, viel Reserve für Multitasking</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">RAM Ultra</div>
+              <img
+                src={~p"/images/image.webp"}
+                alt="Abbildung"
+                class="max-w-full h-auto rounded-lg"
+              />
+              <div>Typ: DDR4 DRAM</div>
+              <div>Größe: 64 GB (2 × 32 GB)</div>
+              <div>Tempo: 3600 MT/s</div>
+              <div>Latenz: CL18</div>
+              <div>Preis: 139 €</div>
+              <div>Extra: Große Kapazität für anspruchsvolle Anwendungen</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">RAM NextGen</div>
+              <img
+                src={~p"/images/1683383_0__9280127.jpg"}
+                alt="Abbildung"
+                class="max-w-full h-auto rounded-lg"
+              />
+
+              <div>Typ: DDR5 DRAM</div>
+              <div>Größe: 16 GB (2 × 8 GB)</div>
+              <div>Tempo: 5600 MT/s</div>
+              <div>Latenz: CL36</div>
+              <div>Preis: 58 €</div>
+              <div>Extra: Neuere DDR-Generation, nicht mit DDR4-Mainboards kompatibel</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">Server RAM</div>
+              <img
+                src={~p"/images/HMA84GR7DJR4N-XN-front_800x800.webp"}
+                alt="Abbildung"
+                class="max-w-full h-auto rounded-lg"
+              />
+              <div>Typ: DDR4 ECC Registered</div>
+              <div>Größe: 32 GB (1 × 32 GB)</div>
+              <div>Tempo: 2666 MT/s</div>
+              <div>Latenz: CL19</div>
+              <div>Preis: 89 €</div>
+              <div>Extra: Fehlerkorrektur (ECC), für geeignete Serversysteme</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">Gaming VRAM</div>
+              <img
+                src={~p"/images/image2.webp"}
+                alt="Abbildung"
+                class="max-w-full h-auto rounded-lg"
+              />
+
+              <div>Typ: GDDR6 VRAM</div>
+              <div>Größe: 8 GB</div>
+              <div>Tempo: Hohe Speicherbandbreite</div>
+              <div>Preis: 169 €</div>
+              <div>Extra: Videospeicher für Grafikkarten, kein gewöhnliches RAM-Modul</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">SRAM Professional</div>
+              <img
+                src={~p"/images/A200_SOP-32-PHOTO.jpg"}
+                alt="Abbildung"
+                class="max-w-full h-auto rounded-lg"
+              />
+              <div>Typ: SRAM</div>
+              <div>Größe: 1 MB</div>
+              <div>Tempo: Sehr kurze Zugriffszeiten</div>
+              <div>Preis: 35 €</div>
+              <div>Extra: Schneller Speicherchip, kein gewöhnliches PC-RAM-Modul</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">Empfehlen Sie nun eines unserer Produkte:</div>
+          <.word_dropdown
+            options={[
+              "RAM Allrounder",
+              "RAM Basic",
+              "RAM Power",
+              "RAM Ultra",
+              "RAM NextGen",
+              "Server RAM",
+              "Gaming VRAM",
+              "SRAM Professional"
+            ]}
+            name="product_answer"
+            test1={false}
+            result_quiz={%{}}
+          />
+        </div>
+      </div>
+      <.button type="submit" class="btn btn-primary">
+        Antworten absenden
+      </.button>
     </div>
   </div>
-</div>
+</.form>
 <script>
     document.addEventListener("change", function(event) {
     if (event.target.name === "system_question_1") {

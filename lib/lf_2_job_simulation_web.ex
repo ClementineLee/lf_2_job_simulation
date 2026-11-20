@@ -17,7 +17,7 @@ defmodule Lf2JobSimulationWeb do
   those modules here.
   """
 
-  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
+  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt pdf)
 
   def router do
     quote do

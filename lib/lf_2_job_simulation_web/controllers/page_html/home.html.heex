@@ -27,7 +27,7 @@
           </.link>
         </div>
       <% true -> %>
-        <%= if(@conn.request_path not in ["/quiz", "/impressum"]) do %>
+        <%= if(@conn.request_path not in ["/quiz", "/impressum", "/simulation"]) do %>
           <%= if(@conn.request_path != "/basis_informationen") do %>
             <div>
               <.link href="/basis_informationen">
@@ -41,6 +41,15 @@
             </.link>
           </div>
         <% end %>
+    <% end %>
+    <%= if(@conn.request_path == "/simulation") do %>
+      <div>IHR ARBEITSVERTRAG</div>
+      <iframe
+        src="/pdf/Handout_RAM_VRAM_korrigierte_Formatierung.pdf"
+        width="100%"
+        height="700px"
+        style="border: none;"
+      ></iframe>
     <% end %>
   </div>
 </div>

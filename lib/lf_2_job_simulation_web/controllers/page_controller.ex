@@ -323,7 +323,7 @@ defmodule Lf2JobSimulationWeb.PageController do
     points = Map.get(result_quiz, :points)
 
     conn =
-      if points >= 1 do
+      if points >= 8 do
         Lf2JobSimulation.UserStore.update_user_results_test_one(
           userdata.userid,
           true,
@@ -383,12 +383,58 @@ defmodule Lf2JobSimulationWeb.PageController do
   def simulation(conn, params) do
     userdata = get_session(conn, :userdata)
 
-    render(conn, :simulation,
-      body: [["Moin", " Was geht"]],
+    conn =
+      if userdata.test2 == true do
+        render(conn, :home,
+          body: [
+            [
+              "Herzlichen Glückwunsch",
+              " Sie haben unser Bewerbungsverfahren bestanden. Sie dürfen jetzt bei uns für Mindestlohn arbeiten."
+            ]
+          ],
+          userid: userdata.userid,
+          test1: true,
+          test2: true
+        )
+      else
+        render(conn, :simulation,
+          body: [["Moin", " Was geht"]],
+          userid: userdata.userid,
+          test1: userdata.test1,
+          test2: userdata.test2
+        )
+      end
+  end
+
+  def simulation_result(conn, params) do
+    userdata = get_session(conn, :userdata)
+
+    product_answer = Map.get(params, "product_answer", "")
+
+    test2 =
+      if(
+        product_answer == "RAM Basic" or
+          product_answer == "RAM Allrounder"
+      ) do
+        Lf2JobSimulation.UserStore.update_user_results_test_two(userdata.userid)
+        true
+      else
+        false
+      end
+
+    render(conn, :home,
+      body: [
+        [
+          "Herzlichen Glückwunsch",
+          " Sie haben unser Bewerbungsverfahren bestanden. Sie dürfen jetzt bei uns für Mindestlohn arbeiten."
+        ]
+      ],
       userid: userdata.userid,
-      test1: userdata.test1,
-      test2: userdata.test2
+      test1: true,
+      test2: test2
     )
+
+    conn
   end
 
   def reset_session(conn, params) do

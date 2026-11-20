@@ -60,6 +60,13 @@ defmodule Lf2JobSimulation.UserStore do
     :ets.insert(:users, {session_id, test1, test2, results})
   end
 
+  def update_user_results_test_two(session_id) do
+    [{^session_id, test1, test2, test1_result}] = :ets.lookup(:users, session_id)
+
+    :ets.delete(:users, session_id)
+    :ets.insert(:users, {session_id, true, true, test1_result})
+  end
+
   def get_options(key) do
     result = :ets.lookup(:options, key)
     options_test_1 = Keyword.get(result, key)
