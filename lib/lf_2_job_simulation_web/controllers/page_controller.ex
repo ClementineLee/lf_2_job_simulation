@@ -24,8 +24,7 @@ defmodule Lf2JobSimulationWeb.PageController do
           "1. Sie haben die Möglichkeit, Ihr Fachwissen mithilfe der von uns bereitgestellten Informationsmaterialien zu festigen.",
           "2. Anschließend dürfen Sie Ihr Wissen mit einem Quiz überprüfen! Keine Sorge, Sie haben beliebig viele Versuche.",
           "3. Haben Sie das Quiz bestanden, wird die Kundensimulation freigeschaltet.",
-          "4. Bestehen Sie die Simulation, erhalten Sie ein Jobangebot.",
-          "5. Schließlich können Sie noch mit weiteren Kunden üben."
+          "4. Bestehen Sie die Simulation, erhalten Sie ein Jobangebot."
         ]
       ],
       userid: userdata.userid,
