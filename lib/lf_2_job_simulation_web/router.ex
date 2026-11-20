@@ -31,6 +31,7 @@ defmodule Lf2JobSimulationWeb.Router do
     post "/quiz/auswertung", PageController, :result_quiz
     get "/unsere_Produkte", PageController, :product_information
     get "/simulation", PageController, :simulation
+    post "/simulation", PageController, :simulation_result
     get "/impressum", PageController, :impressum
     get "/reset_session", PageController, :reset_session
   end
