@@ -434,6 +434,10 @@ defmodule Lf2JobSimulationWeb.PageController do
       test2: test2
     )
 
+    assign(conn,
+      test2: test2
+    )
+
     conn
   end
 
